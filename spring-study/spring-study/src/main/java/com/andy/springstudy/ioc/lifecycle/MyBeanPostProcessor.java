@@ -11,6 +11,7 @@ public class MyBeanPostProcessor implements BeanPostProcessor {
     @Override
     public Object postProcessBeforeInitialization(Object bean, String beanName) throws BeansException {
         // 初始化前的处理（如日志记录、属性修改）
+        System.out.println("初始化前的处理");
         return bean; // 可返回原Bean或包装后的Bean
     }
 
@@ -18,6 +19,7 @@ public class MyBeanPostProcessor implements BeanPostProcessor {
     @Override
     public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
         //初始化后的处理
+        System.out.println("初始化后的处理");
         return bean;
     }
 }
