@@ -21,6 +21,7 @@ public class Bar implements BeanNameAware, BeanFactoryAware, ApplicationContextA
      * 2. 属性注入
      * 3. 初始化
      *   1) Aware接口回调（如实现）: BeanNameAware、eanFactoryAware、ApplicationContextAware
+     *   2) 调用
      *
      */
 

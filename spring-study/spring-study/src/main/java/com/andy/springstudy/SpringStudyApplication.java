@@ -1,6 +1,10 @@
 package com.andy.springstudy;
 
 import com.andy.springstudy.ioc.conf.BeanConfiguration;
+import com.andy.springstudy.ioc.importpractice.Order;
+import com.andy.springstudy.ioc.importpractice.User;
+import com.andy.springstudy.ioc.importpractice.selector.A;
+import com.andy.springstudy.ioc.importpractice.selector.B;
 import com.andy.springstudy.ioc.lifecycle.Bar;
 import org.springframework.beans.factory.NoSuchBeanDefinitionException;
 import org.springframework.boot.ApplicationContextFactory;
@@ -34,8 +38,19 @@ public class SpringStudyApplication {
 
         }
 
+        //使用@Import导入普通类
+//        User user = defaultContext.getBean(User.class);
+        //使用@Import导入配置类
+//        User u1 = defaultContext.getBean("user1", User.class);
+//        Order o1 = defaultContext.getBean("order1", Order.class);
+        //导入mportSelector接口实现类
+        A a = defaultContext.getBean(A.class);
+        B b = defaultContext.getBean(B.class);
 
-
+        String[] names = defaultContext.getBeanDefinitionNames();
+        for (String name : names) {
+            System.out.println(name);
+        }
 
     }
 
