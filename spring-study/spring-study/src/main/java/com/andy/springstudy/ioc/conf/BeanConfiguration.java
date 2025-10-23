@@ -4,8 +4,6 @@ import com.andy.springstudy.Foo;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import java.sql.Connection;
-
 /**
  * foo
  *
@@ -17,6 +15,7 @@ public class BeanConfiguration {
 
     @Bean(name="foo")
     public Foo createFoo(){
+        System.out.println("BeanConfig 中创建 Foo");
         return new Foo();
     }
 }
